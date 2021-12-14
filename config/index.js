@@ -1,3 +1,5 @@
+import { resolve } from 'path';
+
 const config = {
   projectName: 'xfjz-mini-app',
   date: '2021-12-11',
@@ -7,6 +9,14 @@ const config = {
     750: 1,
     828: 1.81 / 2
   },
+  alias: {
+    '@': resolve(__dirname, '..', 'src'),
+    '@/components': resolve(__dirname, '..', 'src/components'),
+    '@/pages': resolve(__dirname, '..', 'src/pages'),
+    '@/models': resolve(__dirname, '..', 'src/models'),
+    '@/store': resolve(__dirname, '..', 'src/store'),
+    '@/utils': resolve(__dirname, '..', 'src/utils')
+  },
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: ['@tarojs/plugin-sass'],
@@ -14,6 +24,7 @@ const config = {
   },
   copy: {
     patterns: [
+      { from: 'cloud', to: 'dist/cloud/' }, // 将云函数文件拷贝到dist
     ],
     options: {
     }
@@ -62,7 +73,7 @@ const config = {
   }
 }
 
-module.exports = function (merge) {
+export default function (merge) {
   if (process.env.NODE_ENV === 'development') {
     return merge({}, config, require('./dev'))
   }

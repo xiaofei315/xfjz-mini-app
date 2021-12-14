@@ -1,29 +1,23 @@
 export default {
-  pages: ["pages/index/index",'pages/statistical/index'],
+  pages: ['pages/home/home', 'pages/statistical/statistical'],
   tabBar: {
-    list: [
+    custom: true,
+    selectColor:'#0c9',
+    list:[
       {
-        pagePath: "pages/index/index",
-        text: "首页",
-      },
-      {
-        pagePath: 'pages/statistical/index',
-        text: '统计',
-      },
-      // {
-      //   pagePath: 'pages/footmark/index',
-      //   text: '足迹',
-      // },
-      // {
-      //   pagePath: 'pages/center/index',
-      //   text: '我的',
-      // },
-    ],
+      pagePath:'pages/home/home'
+    },
+    {
+      pagePath:'pages/statistical/statistical'
+    }],
+    usingComponents: {
+      customtabbar: "custom-tab-bar/index"
+    }
   },
   window: {
-    backgroundTextStyle: "light",
-    navigationBarBackgroundColor: "#fff",
-    navigationBarTitleText: "WeChat",
-    navigationBarTextStyle: "black",
+    backgroundTextStyle: 'light',
+    navigationBarBackgroundColor: '#fff',
+    navigationBarTitleText: 'WeChat',
+    navigationBarTextStyle: 'black',
   },
-};
+}
