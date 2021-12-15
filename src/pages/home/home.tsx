@@ -1,26 +1,38 @@
-import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
-import { AtButton } from 'taro-ui'
-import styles from  './index.module.scss'
+import { Component } from 'react';
+import { View, Text } from '@tarojs/components';
+import { AtButton } from 'taro-ui';
+import Taro from '@tarojs/taro';
+import styles from './index.module.scss';
 
 export default class Index extends Component {
+  componentWillMount() {}
 
-  componentWillMount () { }
+  componentDidMount() {}
 
-  componentDidMount () { }
+  componentWillUnmount() {}
 
-  componentWillUnmount () { }
+  componentDidShow() {}
 
-  componentDidShow () { }
+  componentDidHide() {}
 
-  componentDidHide () { }
+  handleClick = () => {
+    Taro.cloud
+    .callFunction({
+      name: "login",
+    })
+    .then((res) => {
+      console.log(res);
+    });
+  };
 
-  render () {
+  render() {
     return (
       <View className='index'>
         <Text className={styles.text}>Hello world!</Text>
-        <AtButton type='primary'>点我</AtButton>
+        <AtButton type='primary' onClick={this.handleClick}>
+          点我
+        </AtButton>
       </View>
-    )
+    );
   }
 }
