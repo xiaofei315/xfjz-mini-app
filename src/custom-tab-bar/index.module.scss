@@ -1,5 +1,5 @@
 .container {
-    width: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   position: fixed;
@@ -9,5 +9,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .icon{
+      width: 80px;
+      height: 80px;
+    }
+    .text{
+      font-size: 24px;
+      font-weight: 400;
+      &.select{
+        color: #0c9;
+      }
+    }
   }
 }

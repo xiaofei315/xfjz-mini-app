@@ -2,7 +2,7 @@ import { createModel } from "@rematch/core";
 
 export const tabbar = createModel()({
   state: {
-   currentTabbarIndex:1,
+   currentTabbarIndex:3,
   },
   effects: () => ({
     // 获取用户信息

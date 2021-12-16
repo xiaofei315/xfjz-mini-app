@@ -13,10 +13,11 @@ export default class Index extends Component {
 
   componentDidHide() {}
 
+
   render() {
     return (
       <View className='index'>
-        <Text className={styles.text}>首页</Text>
+        <Text className={styles.text}>我的</Text>
       </View>
     );
   }
