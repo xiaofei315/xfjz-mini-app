@@ -1,18 +1,20 @@
 import { CoverView, CoverImage } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import { useDispatch, useSelector } from 'react-redux';
-import cn from 'classnames'
+import cn from 'classnames';
 import { RootState } from 'src/store';
-import add from '@/assets/tabbar/add.png'
-import addCheck from '@/assets/tabbar/add_check.png'
-import center from '@/assets/tabbar/center.png'
-import centerCheck from '@/assets/tabbar/center_check.png'
-import detail from '@/assets/tabbar/detail.png'
-import detailCheck from '@/assets/tabbar/detail_check.png'
-import footPrint from '@/assets/tabbar/footprint.png'
-import footPrintCheck from '@/assets/tabbar/footprint_check.png'
-import statistics from '@/assets/tabbar/statistics.png'
-import statisticsCheck from '@/assets/tabbar/statistics_check.png'
+
+import add from '@/assets/tabbar/add.png';
+import addCheck from '@/assets/tabbar/add_check.png';
+import center from '@/assets/tabbar/center.png';
+import centerCheck from '@/assets/tabbar/center_check.png';
+import detail from '@/assets/tabbar/detail.png';
+import detailCheck from '@/assets/tabbar/detail_check.png';
+import footPrint from '@/assets/tabbar/footprint.png';
+import footPrintCheck from '@/assets/tabbar/footprint_check.png';
+import statistics from '@/assets/tabbar/statistics.png';
+import statisticsCheck from '@/assets/tabbar/statistics_check.png';
+
 import styles from './index.module.scss';
 
 const CustomTabbar = () => {
@@ -59,6 +61,15 @@ const CustomTabbar = () => {
     },
   ];
   const handleClick = (item): void => {
+    if(currentTabbarIndex === item.id && item.id === 3){
+      Taro.navigateTo({
+        url:'/packages/add/add' 
+      })
+      return;
+    }
+    if(currentTabbarIndex === item.id){
+      return;
+    }
     Taro.switchTab({
       url: item.pagePath,
     });
@@ -74,8 +85,23 @@ const CustomTabbar = () => {
             className={styles.itemWrap}
             onClick={() => handleClick(item)}
           >
-            <CoverImage className={styles.icon} src={currentTabbarIndex ===item.id? item.selectedIconPath:item.iconPath} />
-            <CoverView className={cn(styles.text,{[styles.select]:currentTabbarIndex ===item.id})}>{item?.text}</CoverView>
+            <CoverImage
+              className={cn(styles.icon, {
+                [styles.home]: item.id === 3,
+              })}
+              src={
+                currentTabbarIndex === item.id
+                  ? item.selectedIconPath
+                  : item.iconPath
+              }
+            />
+            <CoverView
+              className={cn(styles.text, {
+                [styles.select]: currentTabbarIndex === item.id,
+              })}
+            >
+              {item?.text}
+            </CoverView>
           </CoverView>
         );
       })}

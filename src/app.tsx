@@ -1,36 +1,37 @@
-import { Component } from 'react'
-import { Provider } from 'react-redux'
-import 'taro-ui/dist/style/index.scss'
-import Taro from '@tarojs/taro'
-import store from './store'
+import { Component } from 'react';
+import { Provider } from 'react-redux';
+import Taro from '@tarojs/taro';
+import 'taro-ui/dist/style/index.scss';
+// import './custom-variables.scss';
+import { View } from '@tarojs/components';
+import store from './store';
 
-import './app.scss'
-
+import styles from './app.scss';
 
 class App extends Component {
-  componentDidMount () {
-   Taro.cloud.init({
-     env:'account-dev-4gls3cdk24659538',
-     traceUser:true
-   })
-
+  componentDidMount() {
+    Taro.cloud.init({
+      env: 'account-dev-4gls3cdk24659538',
+      traceUser: true,
+    });
   }
 
-  componentDidShow () {}
+  componentDidShow() {}
 
-  componentDidHide () {}
+  componentDidHide() {}
 
-  componentDidCatchError () {}
+  componentDidCatchError() {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
       <Provider store={store}>
+        {/* <View className={styles.container}>{this.props.children}</View> */}
         {this.props.children}
       </Provider>
-    )
+    );
   }
 }
 
-export default App
+export default App;

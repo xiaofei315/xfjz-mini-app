@@ -30,6 +30,15 @@ export default {
       customtabbar: 'custom-tab-bar/index',
     },
   },
+  subpackages:[
+    {
+      root:'packages',
+      pages:[
+        'add/add'
+      ]
+    }
+
+  ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',

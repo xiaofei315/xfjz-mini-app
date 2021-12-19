@@ -1,11 +1,33 @@
 import { Component } from 'react';
-import { View, Text } from '@tarojs/components';
+import { View } from '@tarojs/components';
+import Taro from '@tarojs/taro';
 import styles from './index.module.scss';
 
-export default class Index extends Component {
+interface IState {
+  records: Array<any>;
+}
+interface IProps {}
+export default class Index extends Component<IProps, IState> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      records: [],
+    };
+  }
   componentWillMount() {}
 
-  componentDidMount() {}
+  componentDidMount() {
+    Taro.cloud
+      .database()
+      .collection('records')
+      .get()
+      .then((res) => {
+        this.setState({
+          records: res?.data,
+        });
+      })
+      .catch((err) => console.log(err));
+  }
 
   componentWillUnmount() {}
 
@@ -14,9 +36,18 @@ export default class Index extends Component {
   componentDidHide() {}
 
   render() {
+    const { records } = this.state;
     return (
-      <View className='index'>
-        <Text className={styles.text}>明细</Text>
+      <View className={styles.container}>
+        {records.map((item, index) => {
+          return (
+            <View key={index} className={styles.card}>
+              <View className={styles.title}>{item?.name}</View>
+              <View className={styles.value}>{item?.cost}</View>
+              <View className={styles.value}>{item?.title}</View>
+            </View>
+          );
+        })}
       </View>
     );
   }
