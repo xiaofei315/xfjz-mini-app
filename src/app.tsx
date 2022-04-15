@@ -2,18 +2,17 @@ import { Component } from 'react';
 import { Provider } from 'react-redux';
 import Taro from '@tarojs/taro';
 import 'taro-ui/dist/style/index.scss';
-// import './custom-variables.scss';
-import { View } from '@tarojs/components';
 import store from './store';
 
-import styles from './app.scss';
 
 class App extends Component {
   componentDidMount() {
+
     Taro.cloud.init({
       env: 'account-dev-4gls3cdk24659538',
       traceUser: true,
     });
+
   }
 
   componentDidShow() {}

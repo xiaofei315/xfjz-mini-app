@@ -3,17 +3,7 @@ import Taro from '@tarojs/taro';
 import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
 import { RootState } from 'src/store';
-
-import add from '@/assets/tabbar/add.png';
-import addCheck from '@/assets/tabbar/add_check.png';
-import center from '@/assets/tabbar/center.png';
-import centerCheck from '@/assets/tabbar/center_check.png';
-import detail from '@/assets/tabbar/detail.png';
-import detailCheck from '@/assets/tabbar/detail_check.png';
-import footPrint from '@/assets/tabbar/footprint.png';
-import footPrintCheck from '@/assets/tabbar/footprint_check.png';
-import statistics from '@/assets/tabbar/statistics.png';
-import statisticsCheck from '@/assets/tabbar/statistics_check.png';
+import list from './data';
 
 import styles from './index.module.scss';
 
@@ -22,57 +12,51 @@ const CustomTabbar = () => {
   const { currentTabbarIndex } = useSelector(
     (state: RootState) => state.tabbar
   );
-  console.log(currentTabbarIndex, 'currentTabbarIndex');
 
-  const list = [
-    {
-      id: 1,
-      pagePath: '/pages/detail/detail',
-      iconPath: detail,
-      selectedIconPath: detailCheck,
-      text: '明细',
-    },
-    {
-      id: 2,
-      pagePath: '/pages/statistical/statistical',
-      iconPath: statistics,
-      selectedIconPath: statisticsCheck,
-      text: '统计',
-    },
-    {
-      id: 3,
-      pagePath: '/pages/home/home',
-      iconPath: add,
-      selectedIconPath: addCheck,
-    },
-    {
-      id: 4,
-      pagePath: '/pages/footprint/footprint',
-      iconPath: footPrint,
-      selectedIconPath: footPrintCheck,
-      text: '足迹',
-    },
-    {
-      id: 5,
-      pagePath: '/pages/center/center',
-      iconPath: center,
-      selectedIconPath: centerCheck,
-      text: '我的',
-    },
-  ];
   const handleClick = (item): void => {
-    if(currentTabbarIndex === item.id && item.id === 3){
+    Taro.getStorage({ key: 'userInfo' }).then((res) => {
+      if (!res) {
+        Taro.getUserProfile({
+          desc: '用于完善会员资料', 
+          success: (res) => {
+            Taro.setStorage({
+              key: 'userInfo',
+              data: res.userInfo,
+            });
+            console.log(res, 'res');
+            Taro.cloud
+              .callFunction({
+                name: 'login',
+              })
+              .then((res) => console.log(res));
+          },
+          fail: () => {
+            Taro.showToast({
+              title: '请先登录',
+              icon: 'none',
+              duration: 2000,
+            });
+          },
+        });
+      }
+    });
+  
+
+    if (currentTabbarIndex === item.id && item.id === 3) {
       Taro.navigateTo({
-        url:'/packages/add/add' 
-      })
+        url: '/packages/add/add',
+      });
       return;
     }
-    if(currentTabbarIndex === item.id){
+
+    if (currentTabbarIndex === item.id) {
       return;
     }
+
     Taro.switchTab({
       url: item.pagePath,
     });
+
     dispatch.tabbar.save({ currentTabbarIndex: item.id });
   };
 

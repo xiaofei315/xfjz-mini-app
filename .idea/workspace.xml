@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39b5b092-0e7d-4643-8f35-df1ca4716527" name="Changes" comment="" />
+    <list default="true" id="39b5b092-0e7d-4643-8f35-df1ca4716527" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/functions/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/functions/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Picker/DatePicker/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Picker/DatePicker/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom-tab-bar/index.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom-tab-bar/index.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom-tab-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom-tab-bar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/add/add.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/add/add.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,20 +21,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="22Akg7kxLAB0WQuZXDXqekRyzb5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="ts.external.directory.path" value="C:\Users\xiaofei\Desktop\xfjz-mini-app\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "C:\\Users\\小飞\\Desktop\\xfjz-mini-app\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -33,10 +50,45 @@
       <option name="presentableId" value="Default" />
       <updated>1639287891729</updated>
       <workItem from="1639287894236" duration="78000" />
+      <workItem from="1646279740060" duration="1064000" />
+      <workItem from="1646280827621" duration="17000" />
+      <workItem from="1646280855325" duration="30000" />
+      <workItem from="1646280896389" duration="17000" />
+      <workItem from="1646719273213" duration="973000" />
+      <workItem from="1646720400696" duration="1460000" />
+      <workItem from="1646721891460" duration="919000" />
+      <workItem from="1646724934114" duration="546000" />
+      <workItem from="1646726657414" duration="883000" />
+      <workItem from="1646727561319" duration="122000" />
+      <workItem from="1646914570705" duration="2190000" />
+      <workItem from="1646920861651" duration="538000" />
+      <workItem from="1646924276639" duration="97000" />
+      <workItem from="1646924390128" duration="29000" />
+      <workItem from="1647440384537" duration="849000" />
+      <workItem from="1647506376610" duration="247000" />
+      <workItem from="1647779860859" duration="883000" />
+      <workItem from="1648136570298" duration="731000" />
+      <workItem from="1648174236459" duration="2000" />
+      <workItem from="1650003712730" duration="132000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
