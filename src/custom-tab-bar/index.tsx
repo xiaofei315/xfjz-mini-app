@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
-import { CoverView, CoverImage } from '@tarojs/components';
+import {useState, useEffect} from 'react';
+import dayjs from 'dayjs';
+import {CoverView, CoverImage} from '@tarojs/components';
 import Taro from '@tarojs/taro';
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import cn from 'classnames';
-import { RootState } from 'src/store';
+import {RootState} from 'src/store';
 import list from './data';
 
 import styles from './index.module.scss';
@@ -19,7 +20,7 @@ const CustomTabbar = () => {
 
   const dispatch = useDispatch();
 
-  const { currentTabbarIndex } = useSelector(
+  const {currentTabbarIndex} = useSelector(
     (state: RootState) => state.tabbar
   );
 
@@ -29,9 +30,48 @@ const CustomTabbar = () => {
         desc: '登录',
         success: (res) => {
           console.log(res);
-          setLogin(true);
-          Taro.setStorageSync('isLogin', true);
-          Taro.setStorageSync('userInfo', res.userInfo);
+          Taro.cloud.callFunction({
+            name: 'login',
+            success: async (result) => {
+              let hasDataBase = await Taro.cloud
+                .database()
+                .collection('users')
+                .where({
+                  openid: result?.result?.openid,
+                })
+                .get();
+              if (hasDataBase.data.length == 0) {
+                Taro.cloud.callFunction({
+                  name: 'createCollection',
+                  data: {
+                    name: result?.result?.openid,
+                  },
+                  success: () => {
+                    Taro.cloud.callFunction({
+                      name: 'addUser',
+                      data: {
+                        openid: result?.result?.openid,
+                        time: dayjs().valueOf().toString()
+                      },
+                      success: () => console.log('创建成功')
+                    })
+
+
+                    Taro.showToast({
+                      title: '登录成功',
+                      icon: 'none',
+                      duration: 2000
+                    })
+                  },
+                });
+              }
+
+              setLogin(true);
+              Taro.setStorageSync('openid', result?.result?.openid);
+              Taro.setStorageSync('isLogin', true);
+              Taro.setStorageSync('userInfo', res.userInfo);
+            },
+          });
         },
         fail: (err) => {
           console.log(err);
@@ -58,7 +98,7 @@ const CustomTabbar = () => {
         url: item.pagePath,
       });
 
-      dispatch.tabbar.save({ currentTabbarIndex: item.id });
+      dispatch.tabbar.save({currentTabbarIndex: item.id});
     }
   };
 

@@ -17,39 +17,32 @@ export default class Index extends Component<IProps, IState> {
   componentWillMount() {}
 
   componentDidMount() {
+    console.log(123123123);
+
+    Taro.cloud.callFunction({
+      name: 'createCollection',
+      data: {
+        name: 'hello',
+      },
+      success: (res) => {
+        console.log(res);
+      },
+      fail: (err) => {
+        console.log(err);
+      },
+    });
+
     // Taro.cloud
     //   .database()
-    //   .collection('records')
+    //   .collection('todos')
     //   .get()
     //   .then((res) => {
     //     this.setState({
     //       records: res?.data,
     //     });
+    //     console.log(res);
     //   })
     //   .catch((err) => console.log(err));
-    
-
-
-
-    // Taro.cloud.callFunction({
-    //   name: 'selectRecords',
-    //   success: (res) => console.log(res?.result?.data),
-    //   fail: (err) => console.log(err),
-    // });
-
-    Taro.cloud
-      .database()
-      .collection('todos')
-      .get()
-      .then((res) => {
-        console.log(res);
-        
-        // this.setState({
-        //   records: res?.data,
-        // });
-      })
-      .catch((err) => console.log(err));
-
   }
 
   componentWillUnmount() {}

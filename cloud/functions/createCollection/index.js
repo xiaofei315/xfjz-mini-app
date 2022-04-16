@@ -4,6 +4,6 @@ cloud.init({
 })
 const db = cloud.database()
 exports.main = async (event, context) => {
-  console.log('event:'+event.name, 'context:'+context.name);
-  return await db.createCollection('todos')
+  // console.log('event:'+event.name, 'context:'+context.name);
+  return await db.createCollection(event.name)
 }

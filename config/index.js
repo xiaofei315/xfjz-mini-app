@@ -19,7 +19,7 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-sass'],
+  plugins: ['@tarojs/plugin-sass','taro-plugin-compiler-optimization'],
   defineConstants: {
   },
   copy: {
