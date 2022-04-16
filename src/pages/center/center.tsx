@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import { AtAvatar } from 'taro-ui';
+import List from './components/List';
 import styles from './index.module.scss';
 
 interface UserInfo {
@@ -56,6 +57,7 @@ export default class Index extends Component<null, IState> {
           <View className={styles.item}>记账天数<Text className={styles.text}>10</Text></View>
           <View className={styles.item}>记账笔数<Text className={styles.text}>40</Text></View>
         </View>
+        <List />
       </View>
     );
   }

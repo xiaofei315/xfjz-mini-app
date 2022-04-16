@@ -17,16 +17,39 @@ export default class Index extends Component<IProps, IState> {
   componentWillMount() {}
 
   componentDidMount() {
+    // Taro.cloud
+    //   .database()
+    //   .collection('records')
+    //   .get()
+    //   .then((res) => {
+    //     this.setState({
+    //       records: res?.data,
+    //     });
+    //   })
+    //   .catch((err) => console.log(err));
+    
+
+
+
+    // Taro.cloud.callFunction({
+    //   name: 'selectRecords',
+    //   success: (res) => console.log(res?.result?.data),
+    //   fail: (err) => console.log(err),
+    // });
+
     Taro.cloud
       .database()
-      .collection('records')
+      .collection('todos')
       .get()
       .then((res) => {
-        this.setState({
-          records: res?.data,
-        });
+        console.log(res);
+        
+        // this.setState({
+        //   records: res?.data,
+        // });
       })
       .catch((err) => console.log(err));
+
   }
 
   componentWillUnmount() {}
@@ -39,15 +62,16 @@ export default class Index extends Component<IProps, IState> {
     const { records } = this.state;
     return (
       <View className={styles.container}>
-        {records.map((item, index) => {
+        {/* {records.map((item, index) => {
           return (
             <View key={index} className={styles.card}>
               <View className={styles.title}>{item?.name}</View>
               <View className={styles.value}>{item?.cost}</View>
               <View className={styles.value}>{item?.title}</View>
+              <View className={styles.value}>{item?.age}</View>
             </View>
           );
-        })}
+        })} */}
       </View>
     );
   }

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { CoverView, CoverImage } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,56 +9,57 @@ import list from './data';
 import styles from './index.module.scss';
 
 const CustomTabbar = () => {
+  const flag = Taro.getStorageSync('isLogin');
+
+  const [isLogin, setLogin] = useState<Boolean>();
+
+  useEffect(() => {
+    setLogin(flag);
+  }, []);
+
   const dispatch = useDispatch();
+
   const { currentTabbarIndex } = useSelector(
     (state: RootState) => state.tabbar
   );
 
   const handleClick = (item): void => {
-    Taro.getStorage({ key: 'userInfo' }).then((res) => {
-      if (!res) {
-        Taro.getUserProfile({
-          desc: '用于完善会员资料', 
-          success: (res) => {
-            Taro.setStorage({
-              key: 'userInfo',
-              data: res.userInfo,
-            });
-            console.log(res, 'res');
-            Taro.cloud
-              .callFunction({
-                name: 'login',
-              })
-              .then((res) => console.log(res));
-          },
-          fail: () => {
-            Taro.showToast({
-              title: '请先登录',
-              icon: 'none',
-              duration: 2000,
-            });
-          },
-        });
-      }
-    });
-  
-
-    if (currentTabbarIndex === item.id && item.id === 3) {
-      Taro.navigateTo({
-        url: '/packages/add/add',
+    if (!isLogin) {
+      Taro.getUserProfile({
+        desc: '登录',
+        success: (res) => {
+          console.log(res);
+          setLogin(true);
+          Taro.setStorageSync('isLogin', true);
+          Taro.setStorageSync('userInfo', res.userInfo);
+        },
+        fail: (err) => {
+          console.log(err);
+          Taro.showToast({
+            title: '取消登录',
+            icon: 'none',
+            duration: 2000,
+          });
+        },
       });
-      return;
+    } else {
+      if (currentTabbarIndex === item.id && item.id === 3) {
+        Taro.navigateTo({
+          url: '/packages/add/add',
+        });
+        return;
+      }
+
+      if (currentTabbarIndex === item.id) {
+        return;
+      }
+
+      Taro.switchTab({
+        url: item.pagePath,
+      });
+
+      dispatch.tabbar.save({ currentTabbarIndex: item.id });
     }
-
-    if (currentTabbarIndex === item.id) {
-      return;
-    }
-
-    Taro.switchTab({
-      url: item.pagePath,
-    });
-
-    dispatch.tabbar.save({ currentTabbarIndex: item.id });
   };
 
   return (
