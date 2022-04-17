@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { View } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import styles from './index.module.scss';
+import Cost from '@/components/SelectList/Cost';
 
 interface IState {
   records: Array<any>;
@@ -16,34 +17,7 @@ export default class Index extends Component<IProps, IState> {
   }
   componentWillMount() {}
 
-  componentDidMount() {
-    console.log(123123123);
-
-    Taro.cloud.callFunction({
-      name: 'createCollection',
-      data: {
-        name: 'hello',
-      },
-      success: (res) => {
-        console.log(res);
-      },
-      fail: (err) => {
-        console.log(err);
-      },
-    });
-
-    // Taro.cloud
-    //   .database()
-    //   .collection('todos')
-    //   .get()
-    //   .then((res) => {
-    //     this.setState({
-    //       records: res?.data,
-    //     });
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.log(err));
-  }
+  componentDidMount() {}
 
   componentWillUnmount() {}
 
@@ -52,19 +26,10 @@ export default class Index extends Component<IProps, IState> {
   componentDidHide() {}
 
   render() {
-    const { records } = this.state;
     return (
       <View className={styles.container}>
-        {/* {records.map((item, index) => {
-          return (
-            <View key={index} className={styles.card}>
-              <View className={styles.title}>{item?.name}</View>
-              <View className={styles.value}>{item?.cost}</View>
-              <View className={styles.value}>{item?.title}</View>
-              <View className={styles.value}>{item?.age}</View>
-            </View>
-          );
-        })} */}
+        <View className={styles.text}>123123</View>
+        <Cost />
       </View>
     );
   }

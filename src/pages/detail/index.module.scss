@@ -1,26 +1,7 @@
 .container {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  padding: 30px 30px;
-  .card {
-    width: 100%;
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 600;
-    // border: 1px solid #346fc2;
-    box-shadow:  0 0 10px 5px #658fca;
-    border-radius: 15px;
-    &:not(:first-child) {
-      margin-top: 30px;
-    }
-    .title {
-    }
-    .value {
-    }
+  height: 100vh;
+  width: 100vw;
+  .text {
+    color: red;
   }
 }

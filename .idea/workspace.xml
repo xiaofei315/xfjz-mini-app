@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39b5b092-0e7d-4643-8f35-df1ca4716527" name="Changes" comment="Changes">
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud/functions/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/functions/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Picker/DatePicker/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Picker/DatePicker/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom-tab-bar/index.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom-tab-bar/index.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/functions/createCollection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/functions/createCollection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/custom-tab-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom-tab-bar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packages/add/add.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/add/add.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/detail/detail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail/detail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +27,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "C:\\Users\\小飞\\Desktop\\xfjz-mini-app\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\小飞\\Desktop\\xfjz-mini-app\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,6 +68,8 @@
       <workItem from="1648136570298" duration="731000" />
       <workItem from="1648174236459" duration="2000" />
       <workItem from="1650003712730" duration="132000" />
+      <workItem from="1650119408396" duration="3669000" />
+      <workItem from="1650123343668" duration="412000" />
     </task>
     <servers />
   </component>

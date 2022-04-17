@@ -1,25 +1,19 @@
-// const { init, DYNAMIC_CURRENT_ENV, cloud } = require('wx-server-sdk');
-// init({
-//   env: DYNAMIC_CURRENT_ENV,
-// });
-
-// const db = cloud.database();
-
-// exports.main = async (event,context) => {
-//   console.log(event,context);
-//   // return await db.createCollection(event.name);
-// };
-
-
-
-
-
-const cloud = require('wx-server-sdk')
+const cloud = require('wx-server-sdk');
 cloud.init({
-  env: cloud.DYNAMIC_CURRENT_ENV
-})
-const db = cloud.database()
+  env: cloud.DYNAMIC_CURRENT_ENV,
+});
+const db = cloud.database();
 exports.main = async (event, context) => {
-  console.log('event:'+event.name, 'context:'+context.name);
-  return await db.createCollection('todos')
-}
+  console.log('event:'+event);
+  await db.collection(event.collectionName).add({
+    data: {
+      title: event.title,
+      type: event.type,
+      date: event.date,
+      time: event.time,
+      cost: event.cost,
+      address: db.Geo.Point(event.address[0], event.address[1]),
+      // address: event.address,
+    },
+  });
+};
