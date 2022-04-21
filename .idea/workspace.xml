@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="39b5b092-0e7d-4643-8f35-df1ca4716527" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud/functions/createCollection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/functions/createCollection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom-tab-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom-tab-bar/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/detail/detail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail/detail.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +64,7 @@
       <workItem from="1650003712730" duration="132000" />
       <workItem from="1650119408396" duration="3669000" />
       <workItem from="1650123343668" duration="412000" />
+      <workItem from="1650500728963" duration="1706000" />
     </task>
     <servers />
   </component>

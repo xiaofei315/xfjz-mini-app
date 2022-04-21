@@ -28,7 +28,6 @@ export default class Index extends Component<IProps, IState> {
   render() {
     return (
       <View className={styles.container}>
-        <View className={styles.text}>123123</View>
         <Cost />
       </View>
     );
