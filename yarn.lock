@@ -1372,6 +1372,24 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
+"@prefresh/core@^1.3.3":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@prefresh/core/-/core-1.3.4.tgz#90fdf865538e99362db1b352b61d22c2ebc21065"
+  integrity sha512-s7iNsnyJ3lZEUrYIgmVIB/hKtp4U6mdD91a31Zg7Q8M49O0x2KThrbrMQYraoDDrs4STdFB8Zv6bceUguOoX1A==
+
+"@prefresh/utils@^1.1.2":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@prefresh/utils/-/utils-1.1.3.tgz#c764c6c8f0917f0a72ae14ec57ed8befde3f9bac"
+  integrity sha512-Mb9abhJTOV4yCfkXrMrcgFiFT7MfNOw8sDa+XyZBdq/Ai2p4Zyxqsb3EgHLOEdHpMj6J9aiZ54W8H6FTam1u+A==
+
+"@prefresh/webpack@^3.2.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@prefresh/webpack/-/webpack-3.3.3.tgz#6090d5b7081ad39e926efaae4c344441949b7d0b"
+  integrity sha512-uT+A7ZuA7fuuUPNEde6Gmzr4oFnzreW9xw6iqw01nPpDiv46o6YWq1j0oGCbdffzHl3fBpcgkPuY07vIfmZ9Lg==
+  dependencies:
+    "@prefresh/core" "^1.3.3"
+    "@prefresh/utils" "^1.1.2"
+
 "@rematch/core@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@rematch/core/-/core-2.2.0.tgz#c4e6cc9d369d341afe2345842f43c255b7a44e90"
@@ -1532,6 +1550,18 @@
     webpack-format-messages "^2.0.5"
     yauzl "2.10.0"
 
+"@tarojs/plugin-framework-react@^3.4.7":
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-framework-react/-/plugin-framework-react-3.4.7.tgz#9c65f0fa0a16f18f5695a4f34eb77feb058f96b7"
+  integrity sha512-qt0VvWF6BEW++gHrz5uftnI2PXPL+Epgx2i7o6AdfdeG4w0+SgVYwbMPXLARvszLTLTy/mSKmGRuuGqyvO6WDw==
+  dependencies:
+    "@pmmmwh/react-refresh-webpack-plugin" "0.4.3"
+    "@prefresh/webpack" "^3.2.3"
+    "@tarojs/runtime" "3.4.7"
+    "@tarojs/shared" "3.4.7"
+    acorn "^8.0.4"
+    acorn-walk "^8.0.0"
+
 "@tarojs/plugin-platform-alipay@3.3.15":
   version "3.3.15"
   resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-alipay/-/plugin-platform-alipay-3.3.15.tgz#033722d30c04c5ece00b5a5c73fc0a641b493689"
@@ -1641,6 +1671,16 @@
     lodash-es "4.17.15"
     reflect-metadata "^0.1.13"
 
+"@tarojs/runtime@3.4.7":
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/@tarojs/runtime/-/runtime-3.4.7.tgz#57ff82873f136a05a036cd494f5400b7c287285b"
+  integrity sha512-tLg3PDbp+Jp3z1RVvoG4i1ZahPl13f4L2htUxBMnQcRLYFhTpV8/OMMOSniotz41jG/Xb2RqVsziXocKlXO4+g==
+  dependencies:
+    "@tarojs/shared" "3.4.7"
+    inversify "5.1.1"
+    lodash-es "4.17.15"
+    reflect-metadata "^0.1.13"
+
 "@tarojs/service@3.3.15":
   version "3.3.15"
   resolved "https://registry.yarnpkg.com/@tarojs/service/-/service-3.3.15.tgz#7a9cb9d40de28f3017487208f6f57aa6056524ac"
@@ -1672,6 +1712,11 @@
   version "3.3.15"
   resolved "https://registry.yarnpkg.com/@tarojs/shared/-/shared-3.3.15.tgz#b482f561b8727038f2f7401d024d17dc3342cb9d"
   integrity sha512-uDsB9kiBb2hSenve9h5V6vYux0m98oRhsVeBFCs1dV8mhz6YaHv8OW2u0rrgQ0e7y8E/uhK+n+Z1N7QxFvflwQ==
+
+"@tarojs/shared@3.4.7":
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/@tarojs/shared/-/shared-3.4.7.tgz#9b31874862e76506bbaf40d2c864674bb2872ebd"
+  integrity sha512-RxHyuf4WSEk2u3aHn9xZ0eH7XhaPhEZduMLCyJoRAToUWae+z3zg/kz7rIbUKDAyC9NBswB6z5mhKF4RMkk+AA==
 
 "@tarojs/taro-h5@3.3.15":
   version "3.3.15"
@@ -1846,6 +1891,13 @@
   version "15.7.4"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
+
+"@types/react-dom@^18.0.2":
+  version "18.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.2.tgz#2d6b46557aa30257e87e67a6d952146d15979d79"
+  integrity sha512-UxeS+Wtj5bvLRREz9tIgsK4ntCuLDo0EcAcACgw3E+9wE8ePDr9uQpq53MfcyxyIS55xJ+0B6mDS8c4qkkHLBg==
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-redux@^7.1.20":
   version "7.1.23"

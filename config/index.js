@@ -7,7 +7,7 @@ const config = {
   deviceRatio: {
     640: 2.34 / 2,
     750: 1,
-    828: 1.81 / 2
+    828: 1.81 / 2,
   },
   alias: {
     '@': resolve(__dirname, '..', 'src'),
@@ -15,43 +15,43 @@ const config = {
     '@/pages': resolve(__dirname, '..', 'src/pages'),
     '@/models': resolve(__dirname, '..', 'src/models'),
     '@/store': resolve(__dirname, '..', 'src/store'),
-    '@/utils': resolve(__dirname, '..', 'src/utils')
+    '@/utils': resolve(__dirname, '..', 'src/utils'),
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-sass','taro-plugin-compiler-optimization'],
-  defineConstants: {
-  },
+  plugins: [
+    '@tarojs/plugin-sass',
+    'taro-plugin-compiler-optimization',
+    '@tarojs/plugin-framework-react',
+  ],
+  defineConstants: {},
   copy: {
     patterns: [
       { from: 'cloud', to: 'dist/cloud/' }, // 将云函数文件拷贝到dist
     ],
-    options: {
-    }
+    options: {},
   },
   framework: 'react',
   mini: {
     postcss: {
       pxtransform: {
         enable: true,
-        config: {
-
-        }
+        config: {},
       },
       url: {
         enable: true,
         config: {
-          limit: 1024 // 设定转换尺寸上限
-        }
+          limit: 1024, // 设定转换尺寸上限
+        },
       },
       cssModules: {
         enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
-          generateScopedName: '[name]__[local]___[hash:base64:5]'
-        }
-      }
-    }
+          generateScopedName: '[name]__[local]___[hash:base64:5]',
+        },
+      },
+    },
   },
   h5: {
     publicPath: '/',
@@ -59,23 +59,22 @@ const config = {
     postcss: {
       autoprefixer: {
         enable: true,
-        config: {
-        }
+        config: {},
       },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
-          generateScopedName: '[name]__[local]___[hash:base64:5]'
-        }
-      }
-    }
-  }
-}
+          generateScopedName: '[name]__[local]___[hash:base64:5]',
+        },
+      },
+    },
+  },
+};
 
 export default function (merge) {
   if (process.env.NODE_ENV === 'development') {
-    return merge({}, config, require('./dev'))
+    return merge({}, config, require('./dev'));
   }
-  return merge({}, config, require('./prod'))
+  return merge({}, config, require('./prod'));
 }

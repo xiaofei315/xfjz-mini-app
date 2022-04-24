@@ -1,8 +1,9 @@
 import { Button, View } from '@tarojs/components';
-import dayjs from 'dayjs';
 import { useState } from 'react';
-import { KeyBoard, PaymentTypePicker, DatePicker } from '@/components/index';
-import { paymentType, incomingType } from '@/constants/enums';
+import ItemList from '@/components/ItemList';
+import { costType, incoming } from '@/constants/enums';
+import { AtActionSheet } from 'taro-ui';
+
 import {
   AtModal,
   AtModalAction,
@@ -12,16 +13,15 @@ import {
   AtTabsPane,
 } from 'taro-ui';
 import styles from './index.module.scss';
+import Taro from '@tarojs/taro';
 
 const tabList = [{ title: '支出' }, { title: '收入' }];
 
 const Index = () => {
-  // const [selectItem, setSelectItem] = useState();
-  const [date, setDate] = useState(0);
-  const [time, setTime] = useState(0);
-
-  const [isShowDatePicker, setShowDatePicker] = useState(false);
+  // const [date, setDate] = useState(0);
+  // const [time, setTime] = useState(0);
   const [currentTab, setCurrentTab] = useState(0);
+  const [mask, setMask] = useState(false);
 
   const [showModel, setShowModel] = useState(false);
 
@@ -31,32 +31,11 @@ const Index = () => {
 
   const handlePaymentClick = (v) => {
     console.log(v);
-  };
-
-  const handleNumberChange = (v) => {
-    console.log(v);
-  };
-
-  const handleDateChange = () => {
-    setShowDatePicker(true);
-  };
-
-  const handleTimeChange = () => {
-    console.log('时间');
-  };
-
-  const handleAddresses = () => {
-    console.log('地址');
-  };
-
-  const handleDelete = () => {
-    console.log('删除');
+    setMask(true);
   };
 
   // 完成
-  const handleFinish = () => {
-    setShowModel(true);
-  };
+
   // 二次确认
   const handleModelCancel = () => {
     setShowModel(false);
@@ -66,51 +45,31 @@ const Index = () => {
     console.log('完成');
   };
 
-  console.log('isShowDatePicker',isShowDatePicker);
-  
-  //
-  const handleCancel = () => {
-    setShowDatePicker(false);
+  // 蒙版
+
+  const handleCancel = () => {};
+  const handleClose = () => {
+    setMask(false);
+  };
+  const handleClick = () => {
+    Taro.showToast({
+      title: '成功',
+      icon: 'success',
+      duration: 2000,
+    });
   };
 
-  const handleConfirm = (v) => {
-    setShowDatePicker(false);
-    setDate(v);
-  };
   return (
     <>
       <View className={styles.container}>
         <AtTabs current={currentTab} tabList={tabList} onClick={handleTabClick}>
           <AtTabsPane current={currentTab} index={0}>
-            <PaymentTypePicker
-              data={paymentType}
-              onClick={handlePaymentClick}
-            />
+            <ItemList data={costType} onClick={handlePaymentClick} />
           </AtTabsPane>
           <AtTabsPane current={currentTab} index={1}>
-            <PaymentTypePicker
-              data={incomingType}
-              onClick={handlePaymentClick}
-            />
+            <ItemList data={incoming} onClick={handlePaymentClick} />
           </AtTabsPane>
         </AtTabs>
-        <KeyBoard
-          date={date}
-          time={time}
-          onDateChange={handleDateChange}
-          onTimeChange={handleTimeChange}
-          onAddressChange={handleAddresses}
-          onDelete={handleDelete}
-          onFinish={handleFinish}
-          onNumberChange={handleNumberChange}
-        />
-        {isShowDatePicker && (
-            <DatePicker
-              value={date}
-              onConfirm={handleConfirm}
-              onCancel={handleCancel}
-            />
-        )}
       </View>
 
       <AtModal isOpened={showModel}>
@@ -121,6 +80,16 @@ const Index = () => {
           <Button onClick={handleModelConfirm}>确定</Button>
         </AtModalAction>
       </AtModal>
+
+      <AtActionSheet
+        isOpened={mask}
+        // cancelText="取消"
+        // title="头部标题可以用通过转义字符换行"
+        onCancel={handleCancel}
+        onClose={handleClose}
+      >
+        <View style={{ width: '100%', height: '300px' }}>123</View>
+      </AtActionSheet>
     </>
   );
 };
