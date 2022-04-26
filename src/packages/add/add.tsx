@@ -1,8 +1,9 @@
 import { Button, View } from '@tarojs/components';
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 import ItemList from '@/components/ItemList';
 import { costType, incoming } from '@/constants/enums';
-import { AtActionSheet } from 'taro-ui';
+import {addContext} from '../../context/addContext'
+import KeyBoard from '@/components/KeyBoard';
 
 import {
   AtModal,
@@ -13,21 +14,26 @@ import {
   AtTabsPane,
 } from 'taro-ui';
 import styles from './index.module.scss';
-import Taro from '@tarojs/taro';
 
 const tabList = [{ title: '支出' }, { title: '收入' }];
 
 const Index = () => {
-  // const [date, setDate] = useState(0);
-  // const [time, setTime] = useState(0);
   const [currentTab, setCurrentTab] = useState(0);
+
   const [mask, setMask] = useState(false);
 
+  // 提交的二次确认
   const [showModel, setShowModel] = useState(false);
+
+  const context=useContext(addContext)
 
   const handleTabClick = (v) => {
     setCurrentTab(v);
   };
+
+const handleCloseMask=()=>{
+  setMask(false)
+}
 
   const handlePaymentClick = (v) => {
     console.log(v);
@@ -40,27 +46,14 @@ const Index = () => {
   const handleModelCancel = () => {
     setShowModel(false);
   };
+
   const handleModelConfirm = () => {
     setShowModel(false);
     console.log('完成');
   };
 
-  // 蒙版
-
-  const handleCancel = () => {};
-  const handleClose = () => {
-    setMask(false);
-  };
-  const handleClick = () => {
-    Taro.showToast({
-      title: '成功',
-      icon: 'success',
-      duration: 2000,
-    });
-  };
-
   return (
-    <>
+    <addContext.Provider value={{data: context.data}}>
       <View className={styles.container}>
         <AtTabs current={currentTab} tabList={tabList} onClick={handleTabClick}>
           <AtTabsPane current={currentTab} index={0}>
@@ -80,17 +73,8 @@ const Index = () => {
           <Button onClick={handleModelConfirm}>确定</Button>
         </AtModalAction>
       </AtModal>
-
-      <AtActionSheet
-        isOpened={mask}
-        // cancelText="取消"
-        // title="头部标题可以用通过转义字符换行"
-        onCancel={handleCancel}
-        onClose={handleClose}
-      >
-        <View style={{ width: '100%', height: '300px' }}>123</View>
-      </AtActionSheet>
-    </>
+      <KeyBoard isShowKeyboard={mask} onCloseMask={handleCloseMask} />
+    </addContext.Provider>
   );
 };
 export default Index;
