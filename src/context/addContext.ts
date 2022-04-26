@@ -11,7 +11,6 @@ export interface IData {
 
 interface IAdd {
   data: IData;
-  // onChange: Function
 }
 
 export const addContext = createContext<IAdd>({
@@ -22,5 +21,4 @@ export const addContext = createContext<IAdd>({
     amount: 0,
     desc: ''
   },
-  // onChange:Function
 })
