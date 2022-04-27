@@ -4,30 +4,33 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
+
   .nickName {
     margin-top: 10px;
-    // color: #f00;
     color: #666;
-
   }
-  .count{
+
+  .count {
     margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    .item{
+
+    .item {
       flex: 1;
       padding: 0 15px;
       text-align: center;
-      .text{
+
+      .text {
         margin-left: 10px;
         color: #666;
 
       }
-      &:first-child{
+
+      &:first-child {
         border-right: 5px solid rgb(0, 0, 0);
       }
     }

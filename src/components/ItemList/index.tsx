@@ -3,7 +3,7 @@ import {Swiper, SwiperItem, View} from '@tarojs/components';
 import styles from './index.module.scss';
 import {IItem} from '@/constants/enums';
 
-function Index({data,chooseType, onClick}) {
+function Index({data, chooseType, onClick}) {
   // 分页
   let totalPage = Math.ceil(data.length / 12);
   let newList: IItem[][] = [];

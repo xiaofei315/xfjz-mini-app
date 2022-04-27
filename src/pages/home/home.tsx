@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import dayjs from 'dayjs';
-import { View, Text, Picker } from '@tarojs/components';
+import {useState} from 'react';
+import {View, Text, Picker} from '@tarojs/components';
 import styles from './index.module.scss';
+import {useNavigatorText} from "@/hooks/useNavigatorText";
 
 const Index = () => {
+  useNavigatorText('首页');
   const [date, setDate] = useState('2018-04-22');
   const [time, setTime] = useState('12:01');
   const onTimeChange = (e) => {

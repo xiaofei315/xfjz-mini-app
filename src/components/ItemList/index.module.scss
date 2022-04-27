@@ -1,8 +1,10 @@
 .container {
   width: 100%;
+
   .swiperWrap {
     width: 100%;
     height: 500px;
+
     .swiperItem {
       height: 100%;
       width: 100%;
@@ -13,6 +15,7 @@
         display: flex;
         padding: 30px 0;
         flex-wrap: wrap;
+
         .itemWrap {
           flex: 0 0 25%;
           display: flex;
@@ -28,6 +31,7 @@
             font-size: 28px;
             text-align: center;
             line-height: 100px;
+
             &.active {
               border-width: 1px;
               background-color: rgba(52, 111, 194, 0.1);

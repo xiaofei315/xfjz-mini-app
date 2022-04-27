@@ -2,6 +2,8 @@
   "compilerOptions": {
     "paths": {
       "@/components/*": ["./src/components/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/context/*": ["./src/context/*"],
       // "@/utils/*": ["./src/utils/*"],
       // "@/api": ["./src/api"],
       "@/assets/*": ["./src/assets/*"],

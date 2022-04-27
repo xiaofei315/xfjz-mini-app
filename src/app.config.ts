@@ -30,17 +30,18 @@ export default {
       customtabbar: 'custom-tab-bar/index',
     },
   },
-  subpackages:[
+  subpackages: [
     {
-      root:'packages',
-      pages:[
-        'add/add'
+      root: 'packages',
+      pages: [
+        'add/add',
+        'detail/detail'
       ]
     }
 
   ],
   window: {
-    backgroundColor:'#fff',
+    backgroundColor: '#fff',
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',

@@ -28,35 +28,77 @@ const KeyBoard = ({isShowKeyboard, onCloseMask}: IProps) => {
     name: '',
   });
 
-  const collectionName=Taro.getStorageSync('openid')
+  const collectionName = Taro.getStorageSync('openid');
 
   const handleClick = (item: Ikey) => {
-    Taro.vibrateShort()
+    Taro.vibrateShort();
     // 提交
     if (item.value == 'finish') {
       handleCalc();
+      if (!context.data.location.latitude) {
+        Taro.showToast({
+          icon: 'none',
+          title: '请填写地址',
+          duration: 3000,
+        });
+        return;
+      }
+      if (!context.data.desc) {
+        Taro.showToast({
+          icon: 'none',
+          title: '请填写备注',
+          duration: 3000,
+        });
+        return;
+      }
+      if (context.data.amount == 0) {
+        Taro.showToast({
+          icon: 'none',
+          title: '请填写金额',
+          duration: 3000,
+        });
+        return;
+      }
       let result = {
         ...context.data,
         date: dayjs(context.data.date).format('YYYY-MM-DD'),
         // collectionName:collectionName
       };
       console.log(result);
-
-      Taro.cloud.callFunction({
-        name: 'addRecord',
-        data: {
-          collectionName: collectionName,
-          data:result
-        },
-        success: (res) => {
-          console.log(res);
-          Taro.showToast({
-            icon:'none',
-            title:'提交成功',
-            duration:2000,
-          })
+      Taro.showModal({
+        title: '提示',
+        content: '是否确认提交',
+        success: function (res) {
+          if (res.confirm) {
+            // console.log('用户点击确定')
+            Taro.cloud.callFunction({
+              name: 'addRecord',
+              data: {
+                collectionName: collectionName,
+                data: result,
+              },
+              success: (res) => {
+                console.log(res);
+                Taro.showToast({
+                  icon: 'none',
+                  title: '提交成功',
+                  duration: 2000,
+                });
+                Taro.redirectTo({
+                  url: '/packages/detail/detail',
+                });
+              },
+            });
+          } else if (res.cancel) {
+            Taro.showToast({
+              icon: 'none',
+              title: '取消提交',
+              duration: 2000,
+            });
+          }
         },
       });
+
       return;
     }
     // 删除
@@ -110,9 +152,9 @@ const KeyBoard = ({isShowKeyboard, onCloseMask}: IProps) => {
   };
   // 备注
   const handleInput = (e) => {
-    console.log(e.detail.value)
+    console.log(e.detail.value);
     context.data.desc = e.detail.value;
-  }
+  };
   return (
     <AtActionSheet
       isOpened={isShowKeyboard}
@@ -129,7 +171,11 @@ const KeyBoard = ({isShowKeyboard, onCloseMask}: IProps) => {
 
         <View className={styles.desc}>
           <Text>备注:</Text>
-          <Input className={styles.input} onInput={handleInput} maxlength={20}/>
+          <Input
+            className={styles.input}
+            onInput={handleInput}
+            maxlength={20}
+          />
         </View>
         <View className={styles.valueWrap}>
           <Text>金额:</Text>

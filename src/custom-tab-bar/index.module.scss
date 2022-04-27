@@ -10,21 +10,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    .icon{
+
+    .icon {
       width: 50px;
       height: 50px;
       margin-bottom: 10px;
-      &.home{
+
+      &.home {
         width: 100px;
         height: 100px;
-      margin-bottom: 0;
+        margin-bottom: 0;
+      }
     }
-    }
-    .text{
+
+    .text {
       color: gray;
       font-weight: 400;
       font-size: 20px;
-      &.select{
+
+      &.select {
         color: #346fc2;
       }
     }

@@ -1,7 +1,7 @@
-import { Component } from 'react';
+import {Component} from 'react';
 import Taro from '@tarojs/taro';
-import { View, Text } from '@tarojs/components';
-import { AtAvatar } from 'taro-ui';
+import {View, Text} from '@tarojs/components';
+import {AtAvatar} from 'taro-ui';
 import List from './components/List';
 import styles from './index.module.scss';
 
@@ -17,10 +17,11 @@ interface IState {
 export default class Index extends Component<null, IState> {
   constructor(props) {
     super(props);
-    this.state = { userInfo: {} };
+    this.state = {userInfo: {}};
   }
+
   componentWillMount() {
-    Taro.setNavigationBarTitle({ title: '个人中心' });
+    Taro.setNavigationBarTitle({title:'个人中心'})
     Taro.getStorage({
       key: 'userInfo',
       success: (res) => {
@@ -39,25 +40,24 @@ export default class Index extends Component<null, IState> {
     });
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+  }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+  }
 
-  componentDidShow() {}
-
-  componentDidHide() {}
 
   render() {
-    const { userInfo } = this.state;
+    const {userInfo} = this.state;
     return (
       <View className={styles.container}>
-        <AtAvatar circle size="large" image={userInfo?.avatarUrl} />
+        <AtAvatar circle size="large" image={userInfo?.avatarUrl}/>
         <Text className={styles.nickName}>{userInfo?.nickName}</Text>
         <View className={styles.count}>
           <View className={styles.item}>记账天数<Text className={styles.text}>10</Text></View>
           <View className={styles.item}>记账笔数<Text className={styles.text}>40</Text></View>
         </View>
-        <List />
+        <List/>
       </View>
     );
   }

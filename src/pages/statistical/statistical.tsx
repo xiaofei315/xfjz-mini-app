@@ -1,7 +1,10 @@
-import { View, Text } from '@tarojs/components';
+import {View, Text} from '@tarojs/components';
 import styles from './index.module.scss';
 import Taro from '@tarojs/taro';
+import {useNavigatorText} from '@/hooks/useNavigatorText';
+
 const Index = () => {
+  useNavigatorText('统计')
   const handleClick = () => {
     Taro.cloud.callFunction({
       name: 'addRecord',

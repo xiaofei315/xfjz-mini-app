@@ -1,14 +1,15 @@
-import { createModel } from "@rematch/core";
+import {createModel} from "@rematch/core";
 import Taro from "@tarojs/taro";
 
-interface SystemInfo {
+export interface SystemInfo {
   navBarHeight: number;
   menuHeight: number;
   menuWidth: number;
   menuBottom: number;
   statusBarHeight: number;
 }
-interface UserInfo {
+
+export interface UserInfo {
   userId?: number;
   userType?: number;
   name: string;
@@ -16,12 +17,13 @@ interface UserInfo {
   accid: string;
   portraitUrl: string;
 }
+
 export const global = createModel()({
   state: {
     isInit: false,
     isLogin: false,
     // 地区数据
-    address: { provinces: [], cities: [], areas: [] },
+    address: {provinces: [], cities: [], areas: []},
     // 当前地理位置
     currentArea: {},
     systemInfo: null,
@@ -29,11 +31,14 @@ export const global = createModel()({
   },
   effects: () => ({
     // 获取用户信息
-    async getBasicInfo() {},
+    async getBasicInfo() {
+    },
 
-    async fetchArea() {},
+    async fetchArea() {
+    },
     // 根据经纬度请求当前地址
-    async fetchLocation() {},
+    async fetchLocation() {
+    },
 
     async fetchSystemInfo() {
       Taro.getSystemInfo({
@@ -62,7 +67,7 @@ export const global = createModel()({
   }),
   reducers: {
     save(state, payload) {
-      return { ...state, ...payload };
+      return {...state, ...payload};
     },
     init(state) {
       return {

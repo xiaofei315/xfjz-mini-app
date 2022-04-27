@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 import Taro from '@tarojs/taro';
-import { View, Map } from '@tarojs/components';
+import {View, Map} from '@tarojs/components';
 import styles from './index.module.scss';
+import {useNavigatorText} from "@/hooks/useNavigatorText";
 
 interface Location {
   lat: number;
   lon: number;
 }
+
 // TODO: add location
 const markers = [
   {
@@ -23,7 +25,9 @@ const markers = [
   },
 ];
 const Index = () => {
-  const [location, setLocation] = useState<Location>({ lat: 0, lon: 0 });
+  useNavigatorText('足迹');
+
+  const [location, setLocation] = useState<Location>({lat: 0, lon: 0});
   useEffect(() => {
     Taro.getLocation({
       type: 'wgs84', //返回可以用于 Taro.openLocation的经纬度

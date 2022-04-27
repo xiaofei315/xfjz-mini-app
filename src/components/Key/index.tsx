@@ -1,6 +1,6 @@
-import { useContext, useState } from 'react';
-import { addContext } from '../../context/addContext';
-import { View, Picker } from '@tarojs/components';
+import {useContext, useState} from 'react';
+import {addContext} from '../../context/addContext';
+import {View, Picker} from '@tarojs/components';
 import styles from './index.module.scss';
 import dayjs from 'dayjs';
 
@@ -10,7 +10,7 @@ interface IProps {
   onClick: () => void;
 }
 
-const Key = ({ type, name, onClick }: IProps) => {
+const Key = ({type, name, onClick}: IProps) => {
   const [date, setDate] = useState(dayjs().format('MM-DD'));
   const [time, setTime] = useState(dayjs().format('HH:mm'));
   const context = useContext(addContext);
