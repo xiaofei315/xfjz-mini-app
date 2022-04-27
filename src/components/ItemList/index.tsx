@@ -1,32 +1,12 @@
 import cn from 'classnames';
-import { useContext, useEffect, useState } from 'react';
-import { addContext, initialData } from '../../context/addContext';
-import { Swiper, SwiperItem, View } from '@tarojs/components';
+import {Swiper, SwiperItem, View} from '@tarojs/components';
 import styles from './index.module.scss';
-import { IItem } from '@/constants/enums';
+import {IItem} from '@/constants/enums';
 
-function Index({ data, onClick }) {
-  const [chooseType, setChooseType] = useState<IItem>({
-    id: '',
-    type: '',
-    subType: '',
-    name: '',
-  });
-  const context = useContext(addContext);
-
-  const handleClick = (v: IItem) => {
-    context.data.type = v;
-    setChooseType(v);
-    onClick(v);
-  };
-
-  useEffect(() => {
-    context.data = initialData;
-  }, [chooseType.id]);
-
+function Index({data,chooseType, onClick}) {
   // 分页
   let totalPage = Math.ceil(data.length / 12);
-  let newList: any[] = [];
+  let newList: IItem[][] = [];
   for (let i = 1; i < totalPage + 1; i++) {
     newList.push(data.slice((i - 1) * 12, i * 12));
   }
@@ -39,23 +19,23 @@ function Index({ data, onClick }) {
         indicatorActiveColor="#346fc2"
         indicatorDots={totalPage > 1}
       >
-        {newList.map((item) => {
+        {newList.map((list, index) => {
           return (
-            <SwiperItem key={item.id} className={styles.swiperItem}>
+            <SwiperItem key={index} className={styles.swiperItem}>
               <View className={styles.listWrap}>
-                {item.map((ele: IItem) => {
+                {list.map((item: IItem) => {
                   return (
                     <View
-                      key={ele.id}
+                      key={item.id}
                       className={styles.itemWrap}
-                      onClick={() => handleClick(ele)}
+                      onClick={() => onClick(item)}
                     >
                       <View
                         className={cn(styles.item, {
-                          [styles.select]: chooseType.id == item.id,
+                          [styles.active]: chooseType.id == item.id,
                         })}
                       >
-                        {ele.name}
+                        {item.name}
                       </View>
                     </View>
                   );

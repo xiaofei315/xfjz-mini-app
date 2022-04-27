@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39b5b092-0e7d-4643-8f35-df1ca4716527" name="Changes" comment="Changes" />
+    <list default="true" id="39b5b092-0e7d-4643-8f35-df1ca4716527" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/functions/addRecord/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/functions/addRecord/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemList/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemList/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/KeyBoard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeyBoard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/addContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/addContext.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/add/add.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/add/add.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/detail/detail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail/detail.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,26 +19,42 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9d430faa-b101-4da6-90f5-41c7e5164a34" />
+        <option name="url" value="git@github.com:xiaofei315/xfjz-mini-app.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="22Akg7kxLAB0WQuZXDXqekRyzb5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\小飞\\Desktop\\xfjz-mini-app\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\小飞\\Desktop\\xfjz-mini-app\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,6 +89,8 @@
       <workItem from="1650500728963" duration="1706000" />
       <workItem from="1650808693578" duration="2896000" />
       <workItem from="1650845415225" duration="8000" />
+      <workItem from="1651040641225" duration="249000" />
+      <workItem from="1651040906723" duration="8003000" />
     </task>
     <servers />
   </component>

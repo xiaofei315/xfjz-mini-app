@@ -1,8 +1,8 @@
 import { Button, View } from '@tarojs/components';
-import { useState,useContext } from 'react';
+import {useState, useContext, useEffect} from 'react';
 import ItemList from '@/components/ItemList';
 import { costType, incoming,IItem } from '@/constants/enums';
-import {addContext} from '../../context/addContext'
+import {addContext,initialData} from '../../context/addContext'
 import KeyBoard from '@/components/KeyBoard';
 
 import {
@@ -19,13 +19,22 @@ const tabList = [{ title: '支出' }, { title: '收入' }];
 
 const Index = () => {
   const [currentTab, setCurrentTab] = useState(0);
-
+  const [chooseType, setChooseType] = useState<IItem>({
+    id: '',
+    type: '',
+    subType: '',
+    name: '',
+  });
   const [mask, setMask] = useState(false);
 
   // 提交的二次确认
   const [showModel, setShowModel] = useState(false);
 
   const context=useContext(addContext)
+
+  useEffect(()=>{
+    context.data=initialData
+  },[chooseType])
 
   const handleTabClick = (v:number) => {
     setCurrentTab(v);
@@ -37,10 +46,10 @@ const handleCloseMask=()=>{
 
   const handlePaymentClick = (v:IItem) => {
     console.log(v);
+    setChooseType(v)
+    context.data.type=v
     setMask(true);
   };
-
-  // 完成
 
   // 二次确认
   const handleModelCancel = () => {
@@ -57,10 +66,10 @@ const handleCloseMask=()=>{
       <View className={styles.container}>
         <AtTabs current={currentTab} tabList={tabList} onClick={handleTabClick}>
           <AtTabsPane current={currentTab} index={0}>
-            <ItemList data={costType} onClick={handlePaymentClick} />
+            <ItemList data={costType} chooseType={chooseType} onClick={handlePaymentClick} />
           </AtTabsPane>
           <AtTabsPane current={currentTab} index={1}>
-            <ItemList data={incoming} onClick={handlePaymentClick} />
+            <ItemList data={incoming} chooseType={chooseType} onClick={handlePaymentClick} />
           </AtTabsPane>
         </AtTabs>
       </View>

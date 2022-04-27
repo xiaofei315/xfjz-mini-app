@@ -1,7 +1,5 @@
-import { Component } from 'react';
 import { View } from '@tarojs/components';
 import { useState } from 'react';
-import Taro from '@tarojs/taro';
 import { costType, incoming } from '@/constants/enums';
 
 import styles from './index.module.scss';
@@ -22,10 +20,10 @@ const Index = () => {
     <View className={styles.container}>
       <AtTabs current={currentTab} tabList={tabList} onClick={handleTabClick}>
         <AtTabsPane current={currentTab} index={0}>
-          <ItemList data={costType} onClick={handlePaymentClick} />
+          <ItemList data={costType} onClick={handlePaymentClick} chooseType={undefined} />
         </AtTabsPane>
         <AtTabsPane current={currentTab} index={1}>
-          <ItemList data={incoming} onClick={handlePaymentClick} />
+          <ItemList data={incoming} onClick={handlePaymentClick} chooseType={undefined} />
         </AtTabsPane>
       </AtTabs>
     </View>

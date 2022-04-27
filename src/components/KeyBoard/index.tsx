@@ -1,10 +1,10 @@
-import { keyList, Ikey } from './keys';
-import { useState, useContext } from 'react';
-import { Input, View, Text } from '@tarojs/components';
+import {keyList, Ikey} from './keys';
+import {useState, useContext} from 'react';
+import {Input, View, Text} from '@tarojs/components';
 import dayjs from 'dayjs';
-import { AtActionSheet } from 'taro-ui';
+import {AtActionSheet} from 'taro-ui';
 import Taro from '@tarojs/taro';
-import { addContext, ILocation } from '../../context/addContext';
+import {addContext, ILocation} from '../../context/addContext';
 import Key from '../Key';
 import styles from './index.module.scss';
 
@@ -13,7 +13,7 @@ interface IProps {
   onCloseMask: () => void;
 }
 
-const KeyBoard = ({ isShowKeyboard, onCloseMask }: IProps) => {
+const KeyBoard = ({isShowKeyboard, onCloseMask}: IProps) => {
   const context = useContext(addContext);
   // 计算价钱
   const [amount, setAmount] = useState('');
@@ -28,27 +28,35 @@ const KeyBoard = ({ isShowKeyboard, onCloseMask }: IProps) => {
     name: '',
   });
 
+  const collectionName=Taro.getStorageSync('openid')
+
   const handleClick = (item: Ikey) => {
-    Taro.vibrateShort().then(() => {});
+    Taro.vibrateShort()
     // 提交
     if (item.value == 'finish') {
       handleCalc();
       let result = {
         ...context.data,
         date: dayjs(context.data.date).format('YYYY-MM-DD'),
+        // collectionName:collectionName
       };
       console.log(result);
 
-      // Taro.cloud.callFunction({
-      //   name: 'addRecord',
-      //   data: {
-      //     collectionName: 'o5UGe5PyArEwT5midLgDSUv6H1Qg',
-
-      //   },
-      //   success: (res) => {
-      //     console.log(res);
-      //   },
-      // });
+      Taro.cloud.callFunction({
+        name: 'addRecord',
+        data: {
+          collectionName: collectionName,
+          data:result
+        },
+        success: (res) => {
+          console.log(res);
+          Taro.showToast({
+            icon:'none',
+            title:'提交成功',
+            duration:2000,
+          })
+        },
+      });
       return;
     }
     // 删除
@@ -59,7 +67,6 @@ const KeyBoard = ({ isShowKeyboard, onCloseMask }: IProps) => {
           content: '是否删除计算结果',
           success: function (res) {
             if (res.confirm) {
-              // console.log('用户点击确定')
               setResult('0');
             } else if (res.cancel) {
               console.log('用户点击取消');
@@ -81,6 +88,7 @@ const KeyBoard = ({ isShowKeyboard, onCloseMask }: IProps) => {
     if (num[0] && !num[1]) {
       setResult(num[0]);
       setAmount(num[0].toString() + '+');
+      context.data.amount = num[0];
       return;
     }
     if (!num[1]) return;
@@ -100,7 +108,11 @@ const KeyBoard = ({ isShowKeyboard, onCloseMask }: IProps) => {
       },
     });
   };
-
+  // 备注
+  const handleInput = (e) => {
+    console.log(e.detail.value)
+    context.data.desc = e.detail.value;
+  }
   return (
     <AtActionSheet
       isOpened={isShowKeyboard}
@@ -117,7 +129,7 @@ const KeyBoard = ({ isShowKeyboard, onCloseMask }: IProps) => {
 
         <View className={styles.desc}>
           <Text>备注:</Text>
-          <Input className={styles.input} maxlength={20} />
+          <Input className={styles.input} onInput={handleInput} maxlength={20}/>
         </View>
         <View className={styles.valueWrap}>
           <Text>金额:</Text>

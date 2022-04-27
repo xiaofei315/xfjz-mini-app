@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+import {IItem} from '../constants/enums'
 
 import dayjs from 'dayjs';
 
@@ -11,7 +12,7 @@ export interface ILocation {
 }
 
 export interface IData {
-  type: Object;
+  type: IItem;
   date: string | number;
   time: string | number;
   amount: number | string;
@@ -24,7 +25,12 @@ interface IAdd {
 }
 
 export const initialData = {
-  type: {},
+  type: {
+    id: '',
+    type: '',
+    subType: '',
+    name: ''
+  },
   date: dayjs().valueOf(),
   time: dayjs().format('HH:mm'),
   amount: 0,
