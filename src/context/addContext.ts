@@ -1,24 +1,43 @@
-import {createContext} from "react";
-import dayjs from "dayjs";
+import { createContext } from 'react';
+
+import dayjs from 'dayjs';
+
+export interface ILocation {
+  address: string;
+  errMsg: string;
+  latitude: string | number;
+  longitude: string | number;
+  name: string;
+}
 
 export interface IData {
-  date: string;
-  time: string;
-  address: string;
-  amount: number;
+  type: Object;
+  date: string | number;
+  time: string | number;
+  amount: number | string;
   desc: string;
+  location: ILocation;
 }
 
 interface IAdd {
   data: IData;
 }
 
-export const addContext = createContext<IAdd>({
-  data: {
-    date: dayjs().format('YYYY-MM'),
-    time: dayjs().format('HH:mm'),
+export const initialData = {
+  type: {},
+  date: dayjs().valueOf(),
+  time: dayjs().format('HH:mm'),
+  amount: 0,
+  desc: '',
+  location: {
     address: '',
-    amount: 0,
-    desc: ''
+    errMsg: '',
+    latitude: 0,
+    longitude: 0,
+    name: '',
   },
-})
+};
+
+export const addContext = createContext<IAdd>({
+  data: initialData,
+});

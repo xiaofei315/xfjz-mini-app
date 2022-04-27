@@ -1,14 +1,36 @@
 import cn from 'classnames';
+import { useContext, useEffect, useState } from 'react';
+import { addContext, initialData } from '../../context/addContext';
 import { Swiper, SwiperItem, View } from '@tarojs/components';
 import styles from './index.module.scss';
+import { IItem } from '@/constants/enums';
 
 function Index({ data, onClick }) {
-  let totalPage = Math.ceil(data.length / 12);
+  const [chooseType, setChooseType] = useState<IItem>({
+    id: '',
+    type: '',
+    subType: '',
+    name: '',
+  });
+  const context = useContext(addContext);
 
+  const handleClick = (v: IItem) => {
+    context.data.type = v;
+    setChooseType(v);
+    onClick(v);
+  };
+
+  useEffect(() => {
+    context.data = initialData;
+  }, [chooseType.id]);
+
+  // 分页
+  let totalPage = Math.ceil(data.length / 12);
   let newList: any[] = [];
   for (let i = 1; i < totalPage + 1; i++) {
     newList.push(data.slice((i - 1) * 12, i * 12));
   }
+
   return (
     <View className={styles.container}>
       <Swiper
@@ -21,14 +43,20 @@ function Index({ data, onClick }) {
           return (
             <SwiperItem key={item.id} className={styles.swiperItem}>
               <View className={styles.listWrap}>
-                {item.map((ele) => {
+                {item.map((ele: IItem) => {
                   return (
                     <View
                       key={ele.id}
                       className={styles.itemWrap}
-                      onClick={() => onClick(ele)}
+                      onClick={() => handleClick(ele)}
                     >
-                      <View className={cn(styles.item)}>{ele.name}</View>
+                      <View
+                        className={cn(styles.item, {
+                          [styles.select]: chooseType.id == item.id,
+                        })}
+                      >
+                        {ele.name}
+                      </View>
                     </View>
                   );
                 })}

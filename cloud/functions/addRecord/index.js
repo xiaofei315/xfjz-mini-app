@@ -13,7 +13,6 @@ exports.main = async (event, context) => {
       time: event.time,
       cost: event.cost,
       address: db.Geo.Point(event.address[0], event.address[1]),
-      // address: event.address,
     },
   });
 };

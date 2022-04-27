@@ -1,9 +1,7 @@
-import dayjs from 'dayjs';
-
 export interface Ikey {
-  type: string,
-  name: string,
-  value: number | string,
+  type: string;
+  name: string;
+  value: number | string;
 }
 
 export const keyList: Array<Ikey> = [
@@ -25,7 +23,7 @@ export const keyList: Array<Ikey> = [
   {
     type: 'date',
     name: '日期',
-    value: dayjs().format('YYYY-MM'),
+    value: '',
   },
   {
     type: 'number',
@@ -47,7 +45,7 @@ export const keyList: Array<Ikey> = [
   {
     name: '时间',
     type: 'time',
-    value: dayjs().format('HH:mm'),
+    value: '',
   },
   {
     type: 'number',
@@ -68,7 +66,7 @@ export const keyList: Array<Ikey> = [
   {
     type: 'operator',
     name: '删除',
-    value: 'delete'
+    value: 'delete',
   },
 
   {

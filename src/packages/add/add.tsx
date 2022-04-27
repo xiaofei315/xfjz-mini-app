@@ -1,7 +1,7 @@
 import { Button, View } from '@tarojs/components';
 import { useState,useContext } from 'react';
 import ItemList from '@/components/ItemList';
-import { costType, incoming } from '@/constants/enums';
+import { costType, incoming,IItem } from '@/constants/enums';
 import {addContext} from '../../context/addContext'
 import KeyBoard from '@/components/KeyBoard';
 
@@ -27,7 +27,7 @@ const Index = () => {
 
   const context=useContext(addContext)
 
-  const handleTabClick = (v) => {
+  const handleTabClick = (v:number) => {
     setCurrentTab(v);
   };
 
@@ -35,7 +35,7 @@ const handleCloseMask=()=>{
   setMask(false)
 }
 
-  const handlePaymentClick = (v) => {
+  const handlePaymentClick = (v:IItem) => {
     console.log(v);
     setMask(true);
   };
@@ -69,7 +69,7 @@ const handleCloseMask=()=>{
         <AtModalHeader>提交</AtModalHeader>
         <AtModalContent>是否确认提交</AtModalContent>
         <AtModalAction>
-          <Button onClick={handleModelCancel}>取消</Button>{' '}
+          <Button onClick={handleModelCancel}>取消</Button>
           <Button onClick={handleModelConfirm}>确定</Button>
         </AtModalAction>
       </AtModal>
