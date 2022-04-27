@@ -1,8 +1,8 @@
 import { init, RematchDispatch, RematchRootState } from '@rematch/core';
-import LoadingPlugin from '@rematch/loading';
+// import LoadingPlugin from '@rematch/loading';
 import thunkMiddleware from 'redux-thunk'
-import immerPlugin from '@rematch/immer'
-import updatedPlugin from '@rematch/updated'
+// import immerPlugin from '@rematch/immer'
+// import updatedPlugin from '@rematch/updated'
 import { models, RootModel } from './models';
 
 const middlewares = [
@@ -17,9 +17,9 @@ export const store = init({
   models: models,
   ...middlewares,
   plugins: [
-    LoadingPlugin(),
-    immerPlugin(),
-    updatedPlugin() ,// 在必定的时间段内防止昂贵（频繁）的获取请求
+    // LoadingPlugin(),
+    // immerPlugin(),
+    // updatedPlugin() ,// 在必定的时间段内防止昂贵（频繁）的获取请求
     // createLoadingPlugin<RootModel, RootModel, any>({
     //   blacklist: ['shoppingCart/getCodeInfo'],
     // }),
