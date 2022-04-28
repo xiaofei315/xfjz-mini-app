@@ -2,48 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39b5b092-0e7d-4643-8f35-df1ca4716527" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useNavigatorText.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packages/detail/detail.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packages/detail/index.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ItemList/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemList/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ItemList/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemList/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Key/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Key/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/KeyBoard/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeyBoard/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/KeyBoard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeyBoard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/addContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/addContext.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom-tab-bar/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom-tab-bar/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom-tab-bar/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom-tab-bar/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/tabbar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/tabbar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packages/add/add.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/add/add.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packages/add/index.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packages/add/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/add/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/center/center.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/center/center.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/center/components/List/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/center/components/List/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/center/components/List/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/center/components/List/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/center/index.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/center/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/center/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detail/detail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail/detail.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detail/index.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detail/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/footprint/footprint.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/footprint/footprint.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/footprint/index.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/footprint/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/footprint/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/statistical/index.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/statistical/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/statistical/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/statistical/statistical.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/statistical/statistical.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +99,7 @@
       <workItem from="1651040641225" duration="249000" />
       <workItem from="1651040906723" duration="8003000" />
       <workItem from="1651058178081" duration="372000" />
-      <workItem from="1651066864890" duration="4405000" />
+      <workItem from="1651066864890" duration="5359000" />
     </task>
     <servers />
   </component>

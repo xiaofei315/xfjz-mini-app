@@ -1,13 +1,16 @@
-import add from '@/assets/tabbar/add.png';
-import addCheck from '@/assets/tabbar/add_check.png';
-import center from '@/assets/tabbar/center.png';
-import centerCheck from '@/assets/tabbar/center_check.png';
-import detail from '@/assets/tabbar/detail.png';
-import detailCheck from '@/assets/tabbar/detail_check.png';
-import footPrint from '@/assets/tabbar/footprint.png';
-import footPrintCheck from '@/assets/tabbar/footprint_check.png';
-import statistics from '@/assets/tabbar/statistics.png';
-import statisticsCheck from '@/assets/tabbar/statistics_check.png';
+const road =
+  'cloud://account-dev-4gls3cdk24659538.6163-account-dev-4gls3cdk24659538-1308635067/tabbar/';
+
+const add = road + 'add.png';
+const addCheck = road + 'add_check.png';
+const center = road + 'center.png';
+const centerCheck = road + 'center_check.png';
+const detail = road + 'detail.png';
+const detailCheck = road + 'detail_check.png';
+const footPrint = road + 'footprint.png';
+const footPrintCheck = road + 'footprint_check.png';
+const statistics = road + 'statistics.png';
+const statisticsCheck = road + 'statistics_check.png';
 
 const list = [
   {

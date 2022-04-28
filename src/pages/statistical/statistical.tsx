@@ -1,47 +1,17 @@
-import {View, Text} from '@tarojs/components';
-import styles from './index.module.scss';
-import Taro from '@tarojs/taro';
-import {useNavigatorText} from '@/hooks/useNavigatorText';
+import {LineChart} from "@/components/Charts";
 
 const Index = () => {
-  useNavigatorText('统计')
-  const handleClick = () => {
-    Taro.cloud.callFunction({
-      name: 'addRecord',
-      data: {
-        collectionName: 'o5UGe5PyArEwT5midLgDSUv6H1Qg',
-        title: '奶茶',
-        type: 1,
-        date: '2022-4-19',
-        time: '10:00',
-        cost: 30,
-        address: [23, 33],
-      },
-      success: (res) => {
-        console.log(res);
-      },
-    });
-  };
-  const handleSelect = () => {
-    Taro.cloud.callFunction({
-      name: 'selectRecords',
-      data: {
-        collectionName: 'o5UGe5PyArEwT5midLgDSUv6H1Qg',
-      },
-      success: (res) => {
-        console.log(res);
-      },
-    });
-  };
+  const data1 = [
+    { y: 63.4, x: "10-01" },
+    { y: 62.7, x: "10-02" },
+    { y: 72.2, x: "10-03" },
+    { y: 58, x: "10-04" },
+    { y: 59.9, x: "10-05" },
+    { y: 67.7, x: "10-06" },
+    { y: 53.3, x: "10-07" },
+  ];
   return (
-    <View className="index">
-      <Text className={styles.text} onClick={handleClick}>
-        统计
-      </Text>
-      <Text className={styles.text} onClick={handleSelect}>
-        查询
-      </Text>
-    </View>
+    <LineChart xData={data1.map((it) => it.x)} yData={data1.map((it) => it.y)} />
   );
 };
 
