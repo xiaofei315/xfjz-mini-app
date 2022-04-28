@@ -16,6 +16,15 @@ export interface IItem {
   name: string;
 }
 
+export const subType = {
+  '1': '衣',
+  '2': '食',
+  '3': '住',
+  '4': '行',
+  '5': '玩',
+  '6': '其他',
+};
+
 // 消费：type: '0'
 export const costType: IItem[] = [
   // 衣：subType: '1'
